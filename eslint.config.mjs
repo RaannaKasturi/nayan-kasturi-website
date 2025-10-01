@@ -10,7 +10,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Convert old-style `extends` into flat configs
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Add your own flat config object (no "extends" allowed here)
   {
     ignores: [
       "node_modules/**",

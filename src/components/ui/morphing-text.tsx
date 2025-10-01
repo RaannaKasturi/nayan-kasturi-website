@@ -16,8 +16,6 @@ const useMorphingText = (texts: string[]) => {
   const text1Ref = useRef<HTMLSpanElement>(null);
   const text2Ref = useRef<HTMLSpanElement>(null);
 
-  const safeBlur = (v: number) => Math.max(0, Math.min(v, 12));
-
   const setStyles = useCallback(
     (fraction: number) => {
       const [current1, current2] = [text1Ref.current, text2Ref.current];
