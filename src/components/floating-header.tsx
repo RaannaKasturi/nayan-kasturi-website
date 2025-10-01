@@ -26,25 +26,32 @@ export function FloatingHeader() {
       )}
     >
       <nav className="mx-auto flex items-center justify-between p-1.5">
-        <div className="hover:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 duration-100">
-          <CircleUserRoundIcon className="size-5" />
-          <p className="font-mono text-lg font-bold">Nayan Kasturi</p>
-        </div>
+        <Link href="/">
+          <div className="hover:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 duration-100 select-none">
+            <CircleUserRoundIcon className="size-5" />
+            <p className="font-mono text-lg font-bold">Nayan Kasturi</p>
+          </div>
+        </Link>
         <div className="hidden items-center gap-1 md:flex">
           {navigationItems.map((link) => (
             <Link
               key={link.label}
               className={buttonVariants({ variant: "ghost", size: "sm" })}
               href={link.href}
+              onClick={() => alert("Website is still under development!")} // Temporary alert for non-functional links
             >
               {link.label}
             </Link>
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <Button size="sm" className="text-lg">
-            Login
-          </Button>
+          {/* Connect Button */}
+          <Link href="#" onClick={() => alert("Website is still under development!")}>
+            <Button size="sm" className="text-lg">
+              Connect
+            </Button>
+          </Link>
+          {/* Mobile Menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <Button
               size="icon"
@@ -72,6 +79,7 @@ export function FloatingHeader() {
                       className: "justify-start w-full",
                     })}
                     href={link.href}
+                    onClick={() => alert("Website is still under development!")} // Temporary alert for non-functional links
                   >
                     {link.label}
                   </Link>
@@ -84,6 +92,7 @@ export function FloatingHeader() {
                     .slice(0, 4)
                     .map((social: (typeof socialLinks)[number]) => (
                       <Link
+                        key={social.label}
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -104,6 +113,7 @@ export function FloatingHeader() {
                     .slice(4)
                     .map((social: (typeof socialLinks)[number]) => (
                       <Link
+                        key={social.label}
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"

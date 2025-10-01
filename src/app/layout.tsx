@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${syne.variable} antialiased`}>
         <div className="fixed inset-x-0 top-0 flex justify-center px-4 sm:px-6 md:px-10 z-50">
-          <div className="w-full max-w-3xl rounded-lg border shadow bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur-lg">
+          <div className="w-full max-w-3xl rounded-lg shadow bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur-lg">
             <FloatingHeader />
           </div>
         </div>
